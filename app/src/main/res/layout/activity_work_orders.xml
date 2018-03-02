@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    tools:context=".WorkOrdersActivity"
+    android:background="@drawable/main_background">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:theme="@style/Button"
+        android:layout_marginTop="5dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Показать заявки"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:layout_marginTop="6dp"
+            android:layout_marginBottom="6dp"
+            android:gravity="center_horizontal"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="29dp"
+                android:text=" C: "
+                android:textColor="@android:color/white"
+                android:textSize="15sp"
+                android:drawableTint="@color/green_500"
+                android:drawableLeft="@drawable/ic_today_black_24dp"
+                android:layout_marginLeft="3dp"
+                android:textStyle="bold"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_marginRight="10dp"/>
+
+            <EditText
+                android:id="@+id/date_begin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="00:00"
+                android:clickable="true"
+                android:textSize="15sp"
+                android:focusable="false"
+                android:gravity="center_horizontal"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ПО:"
+                android:textStyle="bold"
+                android:textSize="15sp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:textColor="@android:color/white"/>
+
+            <EditText
+                android:id="@+id/date_end"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:textSize="15sp"
+                android:focusable="false"
+                android:gravity="center_horizontal"
+                android:hint="00:00"/>
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_check_orders"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginRight="22dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginLeft="22dp"
+            android:theme="@style/Button"
+            android:text="Отправить"
+            android:textAllCaps="false"
+            android:textColor="#fff"
+            android:textSize="18sp"/>
+
+    </LinearLayout>
+
+    <ExpandableListView
+        android:id="@+id/workorders_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="@android:color/holo_blue_bright">
+
+    </ExpandableListView>
+
+</LinearLayout>

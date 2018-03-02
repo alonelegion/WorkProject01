@@ -1,0 +1,375 @@
+<ScrollView android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        tools:context=".ForFinanceActivity"
+        android:background="@drawable/main_background">
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cardView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="20dp"
+            app:cardPreventCornerOverlap="false"
+            app:cardUseCompatPadding="true">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TableLayout
+                    android:layout_width="244dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="20dp"
+                    android:stretchColumns="0.1">
+
+                    <TableRow
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_height="70dp"
+                            android:layout_column="0"
+                            android:background="@drawable/textlines"
+                            android:padding="15dp"
+                            android:text="Переданные заявки за отчётный период" />
+
+                        <TextView
+                            android:id="@+id/trans_pered"
+                            android:layout_height="match_parent"
+                            android:layout_column="1"
+                            android:background="@drawable/textlines"
+                            android:gravity="center"
+                            android:padding="15dp"
+                            android:text="TEST" />
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:layout_column="0"
+                            android:background="@drawable/textlines"
+                            android:padding="15dp"
+                            android:text="Обработанные заявки" />
+
+                        <TextView
+                            android:id="@+id/trans_obrabot"
+                            android:layout_height="match_parent"
+                            android:layout_column="1"
+                            android:background="@drawable/textlines"
+                            android:gravity="center"
+                            android:padding="15dp"
+                            android:text="TEST" />
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/textlines"
+                            android:padding="15dp"
+                            android:text="Не обработанные заявки" />
+
+                        <TextView
+                            android:id="@+id/trans_ne_obrabot"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/textlines"
+                            android:gravity="center"
+                            android:padding="15dp"
+                            android:text="TEST" />
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/textlines"
+                            android:padding="15dp"
+                            android:text="Передумал" />
+
+                        <TextView
+                            android:id="@+id/trans_peredymal"
+                            android:background="@drawable/textlines"
+                            android:padding="15dp"
+                            android:text="TEST"
+                            android:gravity="center"/>
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/textlines"
+                            android:padding="15dp"
+                            android:text="Сделал сам" />
+
+                        <TextView
+                            android:id="@+id/trans_sdelal_sam"
+                            android:background="@drawable/textlines"
+                            android:padding="15dp"
+                            android:text="TEST"
+                            android:gravity="center"/>
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_column="0"
+                            android:layout_weight="1"
+                            android:background="@drawable/textlines"
+                            android:padding="15dp"
+                            android:text="Обратился к другим" />
+
+                        <TextView
+                            android:id="@+id/trans_obrat_k_drygim"
+                            android:layout_height="match_parent"
+                            android:layout_column="1"
+                            android:background="@drawable/textlines"
+                            android:gravity="center"
+                            android:padding="15dp"
+                            android:text="TEST" />
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:layout_column="0"
+                            android:background="@drawable/textlines"
+                            android:padding="15dp"
+                            android:text="Некорректные данные" />
+
+                        <TextView
+                            android:id="@+id/trans_nekorrekt_dannie"
+                            android:layout_height="match_parent"
+                            android:layout_column="1"
+                            android:background="@drawable/textlines"
+                            android:gravity="center"
+                            android:padding="15dp"
+                            android:text="TEST" />
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/textlines"
+                            android:padding="15dp"
+                            android:text="Недозвон" />
+
+                        <TextView
+                            android:id="@+id/trans_nedozvon"
+                            android:background="@drawable/textlines"
+                            android:padding="15dp"
+                            android:text="TEST"
+                            android:gravity="center"/>
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/textlines"
+                            android:padding="15dp"
+                            android:text="Дубль" />
+
+                        <TextView
+                            android:id="@+id/trans_dubl"
+                            android:background="@drawable/textlines"
+                            android:padding="15dp"
+                            android:text="TEST"
+                            android:gravity="center"/>
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/textlines"
+                            android:padding="15dp"
+                            android:text="Не выезжаем в регион" />
+
+                        <TextView
+                            android:id="@+id/trans_ne_region"
+                            android:background="@drawable/textlines"
+                            android:padding="15dp"
+                            android:text="TEST"
+                            android:gravity="center"/>
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_height="70dp"
+                            android:layout_column="0"
+                            android:background="@drawable/textlines"
+                            android:padding="15dp"
+                            android:text="Не выполняем такие работы" />
+
+                        <TextView
+                            android:id="@+id/trans_ne_raboti"
+                            android:layout_height="match_parent"
+                            android:layout_column="1"
+                            android:background="@drawable/textlines"
+                            android:gravity="center"
+                            android:padding="15dp"
+                            android:text="TEST" />
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:layout_column="0"
+                            android:background="@drawable/textlines"
+                            android:padding="15dp"
+                            android:text="Дали адрес SC" />
+
+                        <TextView
+                            android:id="@+id/trans_adres_sc"
+                            android:layout_height="match_parent"
+                            android:layout_column="1"
+                            android:background="@drawable/textlines"
+                            android:gravity="center"
+                            android:padding="15dp"
+                            android:text="TEST" />
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/textlines"
+                            android:padding="15dp"
+                            android:text="Сам перезвонит" />
+
+                        <TextView
+                            android:id="@+id/trans_sam_perezvon"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/textlines"
+                            android:gravity="center"
+                            android:padding="15dp"
+                            android:text="TEST" />
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/textlines"
+                            android:padding="15dp"
+                            android:text="Хотели консультацию по телефону" />
+
+                        <TextView
+                            android:id="@+id/trans_konsultacyu"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/textlines"
+                            android:gravity="center"
+                            android:padding="15dp"
+                            android:text="TEST" />
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/textlines"
+                            android:padding="15dp"
+                            android:text="В работе" />
+
+                        <TextView
+                            android:id="@+id/trans_v_rabote"
+                            android:background="@drawable/textlines"
+                            android:padding="15dp"
+                            android:text="TEST"
+                            android:gravity="center"/>
+
+                    </TableRow>
+
+                </TableLayout>
+
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/fss_b_logo_red"
+                    android:layout_marginBottom="15dp"/>
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+    </RelativeLayout>
+
+</ScrollView>

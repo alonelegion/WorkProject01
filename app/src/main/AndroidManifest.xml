@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.alonelegion.workproject01">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:name=".service.FssApp"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".HelloActivity"
+            android:noHistory="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".LoginActivity"
+            android:noHistory="true"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen"/>
+        <activity android:name=".MainActivity"/>
+        <activity android:name=".DecorOrderActivity" />
+        <activity android:name=".OrdersActivity"/>
+        <activity android:name=".OrderTypeActivity"/>
+        <activity android:name=".PrivateMasterActivity" />
+        <activity android:name=".RegistrationActivity" />
+        <activity android:name=".SmsActivity" />
+        <activity android:name=".SubmittedActivity" />
+        <activity android:name=".UsloviyaActivity" />
+        <activity android:name=".WorkOrdersActivity" />
+        <activity android:name=".StatisticsActivity" />
+        <activity android:name=".ForFinanceActivity" />
+        <activity android:name=".ForProcessedActivity" />
+        <activity android:name=".OnTransferredActivity"/>
+        <activity android:name=".ExpendableTest"/>
+    </application>
+
+</manifest>

@@ -1,0 +1,118 @@
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".LoginActivity">
+
+    <com.flaviofaria.kenburnsview.KenBurnsView
+        android:id="@+id/imageTest"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/login_345"/>
+
+    <LinearLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingTop="144dp"
+        tools:ignore="HardcodedText">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="8dp"
+            android:alpha="0"
+            android:textColor="@android:color/black"
+            android:gravity="center"
+            android:text="ВХОД В ЛИЧНЫЙ КАБИНЕТ"
+            android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle.Inverse"
+            android:textSize="20sp"
+            tools:alpha="1"/>
+
+
+
+        <EditText
+            android:id="@+id/input_login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/user"
+            android:singleLine="true"
+            android:drawableTint="@android:color/black"
+            android:drawablePadding="16dp"
+            android:hint="Логин"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="80dp"
+            android:layout_marginLeft="80dp"
+            android:scaleX="0"
+            android:scaleY="0"
+            android:inputType="textEmailAddress"
+            android:textColor="@android:color/black"
+            android:textColorHint="@android:color/black"/>
+
+
+        <EditText
+            android:id="@+id/input_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:singleLine="true"
+            android:layout_marginRight="80dp"
+            android:layout_marginLeft="80dp"
+            android:drawableLeft="@drawable/lock"
+            android:drawableTint="@android:color/black"
+            android:drawablePadding="16dp"
+            android:hint="Пароль"
+            android:scaleX="0"
+            android:scaleY="0"
+            android:inputType="textPassword"
+            android:textColor="@android:color/black"
+            android:textColorHint="@android:color/black"/>
+
+
+        <Button
+            android:id="@+id/btn_sign"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="48dp"
+            android:scaleX="0"
+            android:scaleY="0"
+            android:text="ВОЙТИ"
+            android:theme="@style/Button"/>
+
+        <Button
+            android:id="@+id/btn_register"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:scaleX="0"
+            android:scaleY="0"
+            android:text="РЕГИСТРАЦИЯ"
+            android:theme="@style/Button"
+            />
+
+
+    </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/img_logo"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="100dp"
+        android:background="@drawable/fss_b_logo_red"/>
+
+
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_gravity="center"-->
+    <!--android:src="@drawable/ic_user2"-->
+    <!--tools:visibility="gone"-->
+
+</FrameLayout>
+

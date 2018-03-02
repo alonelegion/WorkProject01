@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#F44336</color>
+    <color name="colorPrimaryDark">@color/indigo_700</color>
+    <color name="colorAccent">#9C27B0</color>
+
+    <color name="teal_500">#009687</color>
+    <color name="blue_grey_500">#607d8b</color>
+    <color name="blue_grey_700">#455a64</color>
+    <color name="indigo_500">#3f51b5</color>
+    <color name="indigo_700">#303f9f</color>
+    <color name="pink_200">#ff4081</color>
+    <color name="grey">#E2E2E2</color>
+    <color name="green_500">#4CAF50</color>
+
+    <color name="orangeButton">#d67601</color>
+    <color name="grey_500">#9e9e9e</color>
+
+</resources>

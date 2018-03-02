@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="cities_array">
+
+    <item>Санкт-Петербург</item>
+    <item>Москва</item>
+    <item>Астрахань</item>
+    <item>Барнаул</item>
+    <item>Владивосток</item>
+    <item>Волгоград</item>
+    <item>Воронеж</item>
+    <item>Екатеринбург</item>
+    <item>Ижевск</item>
+    <item>Иркутск</item>
+    <item>Казань</item>
+    <item>Калининград</item>
+    <item>Кемерово</item>
+    <item>Краснодар</item>
+    <item>Красноярск</item>
+    <item>Магнитогорск</item>
+    <item>Набережные Челны</item>
+    <item>Нижний Новгород</item>
+    <item>Новокузнецк</item>
+    <item>Новосибирск</item>
+    <item>Омск</item>
+    <item>Оренбург</item>
+    <item>Пенза</item>
+    <item>Пермь</item>
+    <item>Ростов-на-Дону</item>
+    <item>Рязань</item>
+    <item>Самара</item>
+    <item>Саратов</item>
+    <item>Сочи</item>
+    <item>Тверь</item>
+    <item>Тольятти</item>
+    <item>Тюмень</item>
+    <item>Ульяновск</item>
+    <item>Уфа</item>
+    <item>Челябинск</item>
+    <item>Ярославль</item>
+
+    </string-array>
+
+</resources>

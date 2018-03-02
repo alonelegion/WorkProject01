@@ -1,0 +1,80 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/main_background"
+    android:orientation="vertical"
+    android:scrollbarAlwaysDrawVerticalTrack="true">
+
+    <com.flaviofaria.kenburnsview.KenBurnsView
+        android:id="@+id/imageTest"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/login_345"/>
+
+    <LinearLayout
+        android:id="@+id/anim_main_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingTop="150dp"
+        tools:ignore="HardcodedText">
+
+        <TextView
+            android:id="@+id/login_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:alpha="0"
+            android:gravity="center"
+            android:text="ЗАЯВКИ"
+            android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle.Inverse"
+            android:textSize="20sp"
+            tools:alpha="1"/>
+
+        <Button
+            android:id="@+id/btn_make_order"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="Создать Заявку"
+            android:textSize="22sp"
+            android:scaleX="0"
+            android:scaleY="0"
+            android:theme="@style/Button"/>
+
+        <Button
+            android:id="@+id/btn_Submitted_list"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="Переданные заявки"
+            android:textSize="22sp"
+            android:scaleX="0"
+            android:scaleY="0"
+            android:theme="@style/Button"/>
+
+        <Button
+            android:id="@+id/work_orders"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="Заявки в работе"
+            android:textSize="22sp"
+            android:scaleX="0"
+            android:scaleY="0"
+            android:theme="@style/Button"/>
+
+    </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/img_logo"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="70dp"
+        android:background="@drawable/fss_b_logo_red"/>
+
+</FrameLayout>

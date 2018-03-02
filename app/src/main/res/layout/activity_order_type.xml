@@ -1,0 +1,70 @@
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:scrollbarAlwaysDrawVerticalTrack="true">
+
+    <com.flaviofaria.kenburnsview.KenBurnsView
+        android:id="@+id/imageTest"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/login_345"/>
+
+    <LinearLayout
+        android:id="@+id/anim_main_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingTop="150dp"
+        tools:ignore="HardcodedText">
+
+        <TextView
+            android:id="@+id/login_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:alpha="0"
+            android:gravity="center"
+            android:text="СОЗДАТЬ ЗАЯВКУ"
+            android:textStyle="bold"
+            android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle.Inverse"
+            android:textSize="20sp"
+            tools:alpha="1"/>
+
+        <Button
+            android:id="@+id/btn_decor_order"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="Оформление заявки"
+            android:textSize="22sp"
+            android:scaleX="0"
+            android:scaleY="0"
+            android:theme="@style/Button"/>
+
+        <Button
+            android:id="@+id/btn_private_master"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="Частный мастер"
+            android:textSize="22sp"
+            android:scaleX="0"
+            android:scaleY="0"
+            android:theme="@style/Button"/>
+
+    </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/img_logo"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="100dp"
+        android:background="@drawable/fss_b_logo_red"/>
+
+</FrameLayout>

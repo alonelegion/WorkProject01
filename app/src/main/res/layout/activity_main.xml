@@ -1,0 +1,121 @@
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <FrameLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:orientation="vertical"
+        android:scrollbarAlwaysDrawVerticalTrack="true">
+
+        <com.flaviofaria.kenburnsview.KenBurnsView
+            android:id="@+id/imageTest"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/red_low"/>
+
+        <LinearLayout
+            android:id="@+id/anim_main_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingTop="130dp"
+            android:orientation="vertical"
+            android:layout_marginBottom="40dp"
+            tools:ignore="HardcodedText">
+
+            <TextView
+                android:id="@+id/login_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="20dp"
+                android:alpha="0"
+                android:gravity="center"
+                android:text="ГЛАВНОЕ МЕНЮ"
+                android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle.Inverse"
+                android:textSize="20sp"
+                tools:alpha="1"/>
+
+            <Button
+                android:id="@+id/btn_Orders"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:text="Заявки"
+                android:textSize="22sp"
+                android:scaleX="0"
+                android:scaleY="0"
+                android:theme="@style/Button"/>
+
+            <Button
+                android:id="@+id/btn_statistics"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="Статистика"
+                android:textSize="22sp"
+                android:scaleX="0"
+                android:scaleY="0"
+                android:theme="@style/Button"/>
+
+            <Button
+                android:id="@+id/btn_chat"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="Чат"
+                android:textSize="22sp"
+                android:scaleX="0"
+                android:scaleY="0"
+                android:theme="@style/Button02"/>
+
+            <Button
+                android:id="@+id/btn_news"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="Новости"
+                android:textSize="22sp"
+                android:scaleX="0"
+                android:scaleY="0"
+                android:theme="@style/Button02"/>
+
+            <Button
+                android:id="@+id/btn_faq"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="FAQ"
+                android:textSize="22sp"
+                android:scaleX="0"
+                android:scaleY="0"
+                android:theme="@style/Button02"/>
+
+            <Button
+                android:id="@+id/btn_signout"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="Выход"
+                android:textSize="22sp"
+                android:scaleX="0"
+                android:scaleY="0"
+                android:theme="@style/Button"/>
+
+        </LinearLayout>
+
+        <ImageButton
+            android:id="@+id/img_logo"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="130dp"
+            android:background="@drawable/fss_b_logo_red"/>
+
+    </FrameLayout>
+
+</ScrollView>

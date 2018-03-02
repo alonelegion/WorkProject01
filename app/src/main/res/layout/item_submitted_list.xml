@@ -1,0 +1,278 @@
+<ScrollView android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        tools:context=".SubmittedActivity"
+        android:background="@drawable/main_background">
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cardView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="7dp"
+            app:cardPreventCornerOverlap="false"
+            app:cardUseCompatPadding="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TableLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="20dp"
+                    android:stretchColumns="0.1">
+
+                    <TableRow
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_height="wrap_content"
+                            android:layout_column="0"
+                            android:layout_weight="1"
+                            android:background="@drawable/textlines"
+                            android:padding="15dp"
+                            android:textSize="10sp"
+                            android:text="Индекс" />
+
+                        <TextView
+                            android:id="@+id/nz_id"
+                            android:layout_height="match_parent"
+                            android:layout_column="1"
+                            android:background="@drawable/textlines"
+                            android:gravity="center"
+                            android:padding="15dp"
+                            android:textSize="10sp"
+                            android:text="TEST" />
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_height="wrap_content"
+                            android:layout_column="0"
+                            android:layout_weight="1"
+                            android:background="@drawable/textlines"
+                            android:padding="15dp"
+                            android:text="NZ_ID_KP"
+                            android:textSize="@dimen/textSize_card" />
+
+                        <TextView
+                            android:id="@+id/nz_id_kp"
+                            android:layout_height="match_parent"
+                            android:layout_column="1"
+                            android:background="@drawable/textlines"
+                            android:gravity="center"
+                            android:padding="15dp"
+                            android:text="TEST"
+                            android:textSize="@dimen/textSize_card" />
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@drawable/textlines"
+                            android:padding="15dp"
+                            android:textSize="@dimen/textSize_card"
+                            android:text="Дата окончания" />
+
+                        <TextView
+                            android:id="@+id/data_f"
+                            android:background="@drawable/textlines"
+                            android:gravity="center"
+                            android:padding="15dp"
+                            android:textSize="@dimen/textSize_card"
+                            android:text="TEST" />
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@drawable/textlines"
+                            android:padding="15dp"
+                            android:textSize="@dimen/textSize_card"
+                            android:text="Дата заявки" />
+
+                        <TextView
+                            android:id="@+id/data"
+                            android:background="@drawable/textlines"
+                            android:gravity="center"
+                            android:padding="15dp"
+                            android:textSize="@dimen/textSize_card"
+                            android:text="TEST" />
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@drawable/textlines"
+                            android:padding="15dp"
+                            android:textSize="@dimen/textSize_card"
+                            android:text="Причина отмены" />
+
+                        <TextView
+                            android:id="@+id/prz"
+                            android:background="@drawable/textlines"
+                            android:gravity="center"
+                            android:padding="15dp"
+                            android:textSize="@dimen/textSize_card"
+                            android:text="TEST" />
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="276dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@drawable/textlines"
+                            android:padding="15dp"
+                            android:textSize="@dimen/textSize_card"
+                            android:text="Филиал" />
+
+                        <TextView
+                            android:id="@+id/filial"
+                            android:layout_height="match_parent"
+                            android:layout_column="1"
+                            android:background="@drawable/textlines"
+                            android:gravity="center"
+                            android:padding="15dp"
+                            android:textSize="@dimen/textSize_card"
+                            android:text="TEST" />
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_height="wrap_content"
+                            android:layout_column="0"
+                            android:layout_weight="1"
+                            android:background="@drawable/textlines"
+                            android:padding="15dp"
+                            android:textSize="@dimen/textSize_card"
+                            android:text="ФИО" />
+
+                        <TextView
+                            android:id="@+id/fio"
+                            android:layout_height="match_parent"
+                            android:layout_column="1"
+                            android:background="@drawable/textlines"
+                            android:gravity="center"
+                            android:padding="15dp"
+                            android:textSize="@dimen/textSize_card"
+                            android:text="TEST" />
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@drawable/textlines"
+                            android:padding="15dp"
+                            android:textSize="@dimen/textSize_card"
+                            android:text="Телефон" />
+
+                        <TextView
+                            android:id="@+id/phone"
+                            android:background="@drawable/textlines"
+                            android:gravity="center"
+                            android:padding="15dp"
+                            android:textSize="@dimen/textSize_card"
+                            android:text="TEST" />
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@drawable/textlines"
+                            android:padding="15dp"
+                            android:textSize="@dimen/textSize_card"
+                            android:text="Дополнительный телефон" />
+
+                        <TextView
+                            android:id="@+id/phone1"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/textlines"
+                            android:gravity="center"
+                            android:padding="15dp"
+                            android:textSize="@dimen/textSize_card"
+                            android:text="TEST" />
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@drawable/textlines"
+                            android:padding="15dp"
+                            android:textSize="@dimen/textSize_card"
+                            android:text="Описание проблемы" />
+
+                        <TextView
+                            android:id="@+id/work"
+                            android:background="@drawable/textlines"
+                            android:gravity="center"
+                            android:padding="15dp"
+                            android:textSize="@dimen/textSize_card"
+                            android:text="TEST" />
+
+                    </TableRow>
+
+                </TableLayout>
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+    </RelativeLayout>
+</ScrollView>
