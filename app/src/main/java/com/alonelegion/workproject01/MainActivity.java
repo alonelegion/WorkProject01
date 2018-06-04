@@ -91,8 +91,6 @@ public class MainActivity extends AppCompatActivity {
         RandomTransitionGenerator generator = new RandomTransitionGenerator();
         kbv.setTransitionGenerator(generator);
 
-
-
         // Переход на экран заявок
         mButtonOrders = (Button)findViewById(R.id.btn_Orders);
         mButtonOrders.setOnClickListener(new View.OnClickListener() {
@@ -118,8 +116,10 @@ public class MainActivity extends AppCompatActivity {
         mButtonSignOut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 // Вызываем метод очистки памяти от токена
                 removeToken();
+
                 // Отправляем на экран входа в личный кабинет
                 Intent intent = new Intent(MainActivity.this, LoginActivity.class);
                 startActivity(intent);
@@ -138,7 +138,9 @@ public class MainActivity extends AppCompatActivity {
         mButtonNews.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(MainActivity.this, "РАЗДЕЛ НАХОДИТСЯ В РАЗРАБОТКЕ", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(MainActivity.this, NewsActivity.class);
+                startActivity(intent);
+//                Toast.makeText(MainActivity.this, "РАЗДЕЛ НАХОДИТСЯ В РАЗРАБОТКЕ", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -155,5 +157,13 @@ public class MainActivity extends AppCompatActivity {
     private void removeToken() {
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
         prefs.edit().remove("token").apply();
+    }
+
+    @Override
+    public void onBackPressed() {
+        Intent close = new Intent(Intent.ACTION_MAIN);
+        close.addCategory(Intent.CATEGORY_HOME);
+        close.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(close);
     }
 }

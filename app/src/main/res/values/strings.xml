@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">WorkProject01</string>
+    <string name="app_name">АльфаПКП</string>
     <string name="account_enter">Вход в аккаунт</string>
     <string name="login_hint">Логин</string>
     <string name="passowrd_hint">Пароль</string>
@@ -11,4 +11,27 @@
     <string name="menu_settings">Settings</string>
     <string name="menu_refresh">Refresh</string>
     <string name="menu_new_order">New Order</string>
+
+    <string name="dialog_title_incorrect_data">Неверная дата</string>
+    <string name="button_ok">ОК</string>
+    <string name="title_orders">Заявки</string>
+    <string name="title_decorated">Оформленные заявки</string>
+    <string name="filter_menu">Фильтр</string>
+    <string name="btn_accept">Применить</string>
+    <string name="choice_city">Выберите город</string>
+    <string name="filter_status">Выберите статус</string>
+    <string name="title_filter">Фильтр</string>
+    <string name="error_no_orders">Нет заявок</string>
+    <string name="title_activity_nav_main">NavMainActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+
+    <string name="title_statistics">Статистика</string>
+    <string name="title_chat">Чат</string>
+    <string name="title_news">Новости</string>
+    <string name="title_f_a_q">F.A.Q.</string>
+    <string name="title_exit">Выйти</string>
 </resources>

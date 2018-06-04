@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.alonelegion.workproject01">
 
+    <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
@@ -24,23 +25,79 @@
         </activity>
         <activity
             android:name=".LoginActivity"
-            android:noHistory="true"
-            android:theme="@android:style/Theme.NoTitleBar.Fullscreen"/>
-        <activity android:name=".MainActivity"/>
-        <activity android:name=".DecorOrderActivity" />
-        <activity android:name=".OrdersActivity"/>
-        <activity android:name=".OrderTypeActivity"/>
-        <activity android:name=".PrivateMasterActivity" />
-        <activity android:name=".RegistrationActivity" />
-        <activity android:name=".SmsActivity" />
-        <activity android:name=".SubmittedActivity" />
-        <activity android:name=".UsloviyaActivity" />
-        <activity android:name=".WorkOrdersActivity" />
-        <activity android:name=".StatisticsActivity" />
-        <activity android:name=".ForFinanceActivity" />
-        <activity android:name=".ForProcessedActivity" />
-        <activity android:name=".OnTransferredActivity"/>
-        <activity android:name=".ExpendableTest"/>
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".MainActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".DecorOrderActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".OrdersActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".OrderTypeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".PrivateMasterActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".RegistrationActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".SmsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".SubmittedActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".UsloviyaActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".WorkOrdersActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".StatisticsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ForFinanceActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ForProcessedActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".OnTransferredActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".WorkOrderDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".SubmittedDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".FinanceDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ProcessedDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".TransferredDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".FilterWorkActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".NewsActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".NewsDetailActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".NavMainActivity"
+            android:label="@string/title_activity_nav_main"
+            android:theme="@style/AppTheme"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".NavStatisticsActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".NavOrdersActivity"
+            android:screenOrientation="portrait"/>
     </application>
 
 </manifest>

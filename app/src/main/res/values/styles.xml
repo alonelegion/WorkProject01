@@ -2,6 +2,9 @@
 
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowFullscreen">false</item>
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
@@ -10,12 +13,29 @@
 
     <style name="Button" parent="Theme.AppCompat">
         <item name="colorControlHighlight">@color/indigo_500</item>
-        <item name="colorButtonNormal">@color/green_500</item>
+        <item name="colorButtonNormal">@color/colorAccent</item>
     </style>
 
     <style name="Button02" parent="Theme.AppCompat">
         <item name="colorControlHighlight">@color/indigo_500</item>
         <item name="colorButtonNormal">@color/grey_500</item>
     </style>
+
+    <style name="Button03" parent="Theme.AppCompat">
+        <item name="colorControlHighlight">@color/indigo_500</item>
+        <item name="colorButtonNormal">#BA68C8</item>
+    </style>
+
+    <style name="Toolbar" parent="Widget.AppCompat.Toolbar">
+
+        <item name="android:theme">@style/ThemeOverlay.AppCompat.Dark.ActionBar</item>
+        <item name="android:background">@color/colorPrimaryDark</item>
+
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light"
+        />
 
 </resources>

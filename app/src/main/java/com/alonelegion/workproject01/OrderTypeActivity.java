@@ -5,6 +5,7 @@ import android.support.v4.view.ViewCompat;
 import android.support.v4.view.ViewPropertyAnimatorCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
@@ -40,14 +41,9 @@ public class OrderTypeActivity extends AppCompatActivity {
 
     // Описание параметров анимации
     private void animate() {
-        ImageView logoImageView = (ImageView) findViewById(R.id.img_logo);
         ViewGroup container = (ViewGroup) findViewById(R.id.anim_main_container);
 
-        ViewCompat.animate(logoImageView)
-                .translationY(-250)
-                .setStartDelay(STARTUP_DELAY)
-                .setDuration(ANIM_ITEM_DURATION).setInterpolator(
-                new DecelerateInterpolator(1.2f)).start();
+
 
         for (int i = 0; i < container.getChildCount(); i++) {
             View v = container.getChildAt(i);
@@ -77,9 +73,7 @@ public class OrderTypeActivity extends AppCompatActivity {
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_order_type);
 
-        KenBurnsView kbv = (KenBurnsView) findViewById(R.id.imageTest);
-        RandomTransitionGenerator generator = new RandomTransitionGenerator();
-        kbv.setTransitionGenerator(generator);
+        setUpToolbar();
 
         mButtonDecorOrder = (Button) findViewById(R.id.btn_decor_order);
         mButtonDecorOrder.setOnClickListener(new View.OnClickListener() {
@@ -96,6 +90,17 @@ public class OrderTypeActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(OrderTypeActivity.this, PrivateMasterActivity.class);
                 startActivity(intent);
+            }
+        });
+    }
+
+    private void setUpToolbar() {
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
             }
         });
     }

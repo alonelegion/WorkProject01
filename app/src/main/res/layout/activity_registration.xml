@@ -1,37 +1,31 @@
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/main_background">
+    android:background="@color/colorPrimaryDark">
 
-    <RelativeLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/main_background"
+        android:background="@color/colorPrimaryDark"
         android:orientation="vertical"
         android:scrollbarAlwaysDrawVerticalTrack="true">
 
-        <TextView
-            android:id="@+id/login_title"
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            style="@style/Toolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            android:layout_marginTop="22dp"
-            android:gravity="center_horizontal"
-            android:text="Регистрация"
-            android:textColor="#fff"
-            android:textSize="26sp"
-            android:textStyle="bold"/>
+            app:navigationIcon="@drawable/ic_arrow_back_white_24dp"
+            app:title="Регистрация" />
+
 
         <RelativeLayout
-            android:layout_below="@+id/login_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"
-            android:layout_marginTop="10dp"
-            android:background="#fff"
+            android:layout_below="@+id/toolbar"
+            android:layout_margin="32dp"
+            android:background="@color/colorPrimary"
             android:elevation="4dp"
             android:padding="20dp">
 
@@ -45,8 +39,8 @@
                     android:layout_height="wrap_content">
 
                     <Spinner
-                        android:id="@+id/txt_country"
-                        android:layout_width="wrap_content"
+                        android:id="@+id/reg_choice_city"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_alignParentLeft="true"
                         android:layout_alignParentStart="true"
@@ -57,62 +51,76 @@
 
                 <android.support.design.widget.TextInputLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:textColorHint="#FFFFFF">
 
                     <EditText
+                        android:id="@+id/reg_name"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:drawableLeft="@drawable/user"
+                        android:drawableTint="#FFFFFF"
+                        android:hint="Ф.И.О."
+                        android:inputType="textCapWords"
                         android:singleLine="true"
-                        android:drawableTint="#FF4082"
-                        android:hint="@string/login_hint"
-                        android:inputType="textEmailAddress"/>
+                        android:textColor="@android:color/white" />
+
+                </android.support.design.widget.TextInputLayout>
+
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColorHint="@android:color/white">
+
+                    <EditText
+                        android:id="@+id/reg_phone"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawableLeft="@drawable/ic_local_phone_black_24dp"
+                        android:drawableTint="@android:color/white"
+                        android:inputType="phone"
+                        android:singleLine="true"
+                        android:textColor="@android:color/white"
+                        android:textStyle="bold" />
 
                 </android.support.design.widget.TextInputLayout>
 
                 <android.support.design.widget.TextInputLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:textColorHint="@android:color/white">
 
                     <EditText
+                        android:id="@+id/reg_phone2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="16dp"
+                        android:drawableLeft="@drawable/ic_local_phone_black_24dp"
+                        android:drawableTint="#FFFFFF"
+                        android:hint="Дополнительный номер"
+                        android:inputType="phone"
                         android:singleLine="true"
-                        android:drawableLeft="@drawable/lock"
-                        android:drawableTint="#FF4082"
-                        android:hint="@string/passowrd_hint"
-                        android:inputType="textPassword"/>
+                        android:textColor="@android:color/white" />
 
                 </android.support.design.widget.TextInputLayout>
 
-                <android.support.design.widget.TextInputLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <EditText
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:drawableLeft="@drawable/lock"
-                        android:singleLine="true"
-                        android:drawableTint="#FF4082"
-                        android:hint="Подтвердить пароль"
-                        android:inputType="textPassword"/>
-
-                </android.support.design.widget.TextInputLayout>
 
                 <android.support.design.widget.TextInputLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:textColorHint="#FFFFFF">
 
                     <EditText
+                        android:id="@+id/reg_email"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:drawableLeft="@drawable/ic_email_black_24dp"
-                        android:singleLine="true"
-                        android:drawableTint="#FF4082"
+                        android:drawableTint="#FFFFFF"
                         android:hint="Email"
-                        android:inputType="textEmailAddress"/>
+                        android:inputType="textEmailAddress"
+                        android:singleLine="true"
+                        android:textColor="@android:color/white" />
 
                 </android.support.design.widget.TextInputLayout>
 
@@ -120,26 +128,26 @@
                     android:id="@+id/btn_registration"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginRight="22dp"
                     android:layout_marginBottom="10dp"
                     android:layout_marginLeft="22dp"
-                    android:theme="@style/Button"
+                    android:layout_marginRight="22dp"
+                    android:layout_marginTop="20dp"
                     android:text="Регистрация"
                     android:textAllCaps="false"
-                    android:textColor="#fff"
-                    android:textSize="18sp"/>
+                    android:textColor="#FFFFFF"
+                    android:textSize="18sp"
+                    android:theme="@style/Button" />
 
                 <TextView
                     android:id="@+id/txt_usloviya"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Условия использования!"
+                    android:clickable="true"
                     android:gravity="center_horizontal"
-                    android:textColor="#0D47A1"
-                    android:textSize="14sp"
                     android:onClick="Usloviya"
-                    android:clickable="true"/>
+                    android:text="Условия использования!"
+                    android:textColor="@android:color/white"
+                    android:textSize="14sp" />
 
             </LinearLayout>
 

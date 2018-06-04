@@ -5,6 +5,7 @@ import android.support.v4.view.ViewCompat;
 import android.support.v4.view.ViewPropertyAnimatorCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.DecelerateInterpolator;
@@ -40,14 +41,7 @@ public class StatisticsActivity extends AppCompatActivity {
 
     // Описание параметров анимации
     private void animate() {
-        ImageView logoImageView = (ImageView) findViewById(R.id.img_logo);
         ViewGroup container = (ViewGroup) findViewById(R.id.anim_main_container);
-
-        ViewCompat.animate(logoImageView)
-                .translationY(-250)
-                .setStartDelay(STARTUP_DELAY)
-                .setDuration(ANIM_ITEM_DURATION).setInterpolator(
-                new DecelerateInterpolator(1.2f)).start();
 
         for (int i = 0; i < container.getChildCount(); i++) {
             View v = container.getChildAt(i);
@@ -74,6 +68,8 @@ public class StatisticsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_statistics);
+
+        setUpToolbar();
 
         KenBurnsView kbv = (KenBurnsView) findViewById(R.id.imageTest);
         RandomTransitionGenerator generator = new RandomTransitionGenerator();
@@ -104,6 +100,17 @@ public class StatisticsActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(StatisticsActivity.this, OnTransferredActivity.class);
                 startActivity(intent);
+            }
+        });
+    }
+
+    private void setUpToolbar() {
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
             }
         });
     }

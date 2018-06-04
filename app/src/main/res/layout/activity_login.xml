@@ -1,5 +1,4 @@
-<FrameLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -10,7 +9,7 @@
         android:id="@+id/imageTest"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:src="@drawable/login_345"/>
+        android:src="@color/colorPrimaryDark" />
 
     <LinearLayout
         android:id="@+id/container"
@@ -28,51 +27,54 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="8dp"
             android:alpha="0"
-            android:textColor="@android:color/black"
             android:gravity="center"
             android:text="ВХОД В ЛИЧНЫЙ КАБИНЕТ"
             android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle.Inverse"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
             android:textSize="20sp"
-            tools:alpha="1"/>
-
+            tools:alpha="1" />
 
 
         <EditText
             android:id="@+id/input_login"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:drawableLeft="@drawable/user"
-            android:singleLine="true"
-            android:drawableTint="@android:color/black"
-            android:drawablePadding="16dp"
-            android:hint="Логин"
-            android:layout_marginTop="20dp"
-            android:layout_marginRight="80dp"
             android:layout_marginLeft="80dp"
+            android:layout_marginRight="80dp"
+            android:layout_marginTop="20dp"
+            android:drawableLeft="@drawable/user"
+            android:drawablePadding="16dp"
+            android:drawableTint="@android:color/white"
+            android:hint="Логин"
+            android:inputType="textEmailAddress"
             android:scaleX="0"
             android:scaleY="0"
-            android:inputType="textEmailAddress"
-            android:textColor="@android:color/black"
-            android:textColorHint="@android:color/black"/>
+            android:singleLine="true"
+            android:textStyle="bold"
+            android:textColor="@android:color/white"
+            android:textColorHint="@android:color/white" />
 
 
         <EditText
             android:id="@+id/input_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:singleLine="true"
-            android:layout_marginRight="80dp"
             android:layout_marginLeft="80dp"
+            android:layout_marginRight="80dp"
+            android:layout_marginTop="16dp"
             android:drawableLeft="@drawable/lock"
-            android:drawableTint="@android:color/black"
             android:drawablePadding="16dp"
+            android:drawableTint="@android:color/white"
             android:hint="Пароль"
+            android:inputType="textPassword"
             android:scaleX="0"
             android:scaleY="0"
-            android:inputType="textPassword"
-            android:textColor="@android:color/black"
-            android:textColorHint="@android:color/black"/>
+            android:singleLine="true"
+            android:textStyle="bold"
+            android:imeOptions="actionDone"
+            android:textColor="@android:color/white"
+            android:textColorHint="@android:color/white"/>
 
 
         <Button
@@ -83,7 +85,7 @@
             android:scaleX="0"
             android:scaleY="0"
             android:text="ВОЙТИ"
-            android:theme="@style/Button"/>
+            android:theme="@style/Button" />
 
         <Button
             android:id="@+id/btn_register"
@@ -93,8 +95,7 @@
             android:scaleX="0"
             android:scaleY="0"
             android:text="РЕГИСТРАЦИЯ"
-            android:theme="@style/Button"
-            />
+            android:theme="@style/Button03" />
 
 
     </LinearLayout>
@@ -105,14 +106,7 @@
         android:layout_height="150dp"
         android:layout_gravity="center"
         android:layout_marginBottom="100dp"
-        android:background="@drawable/fss_b_logo_red"/>
-
-
-    <!--android:layout_width="wrap_content"-->
-    <!--android:layout_height="wrap_content"-->
-    <!--android:layout_gravity="center"-->
-    <!--android:src="@drawable/ic_user2"-->
-    <!--tools:visibility="gone"-->
+        android:background="@drawable/fss_b_logo_red" />
 
 </FrameLayout>
 

@@ -75,7 +75,7 @@ public class HelloActivity extends Activity {
     }
 
     private void startMainActivity() {
-        Intent intent = new Intent(this, MainActivity.class);
+        Intent intent = new Intent(this, NavMainActivity.class);
         startActivity(intent);
     }
 }

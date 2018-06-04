@@ -1,143 +1,188 @@
 package com.alonelegion.workproject01;
 
+import android.app.DatePickerDialog;
+import android.content.DialogInterface;
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
+import android.preference.PreferenceManager;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.View;
+import android.widget.DatePicker;
+import android.widget.EditText;
 import android.widget.ListAdapter;
 import android.widget.ListView;
+import android.widget.ProgressBar;
 import android.widget.SimpleAdapter;
 import android.widget.Toast;
+
+import com.alonelegion.workproject01.adapters.Transferred;
+import com.alonelegion.workproject01.adapters.TransferredAdapter;
+import com.alonelegion.workproject01.api.FssService;
+import com.alonelegion.workproject01.api.TransferredResponse;
+import com.alonelegion.workproject01.service.FssApp;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.HashMap;
+import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class OnTransferredActivity extends AppCompatActivity {
+    private static final String TAG = OnTransferredActivity.class.getSimpleName();
+    private RecyclerView recyclerView;
+    private TransferredAdapter transferredAdapter;
+    private String token;
 
-    private String TAG = MainActivity.class.getSimpleName();
-    private ListView lv;
+    private EditText dateStartView;
+    private EditText dateEndView;
+    private Calendar dateStart = Calendar.getInstance();
+    private Calendar dateEnd = Calendar.getInstance();
 
-    ArrayList<HashMap<String, String>> contactList;
+    private SimpleDateFormat dateFormat = new SimpleDateFormat("dd.MM.yyyy");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_submitted);
-
-        contactList = new ArrayList<>();
-        lv = (ListView) findViewById(R.id.submitted_list);
-
-        new GetContacts().execute();
+        setContentView(R.layout.activity_on_transferred);
+        setUpToolbar();
+        setUpDateFilter();
+        setUpRecyclerView();
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
+        recyclerView = findViewById(R.id.for_finance_list);
+        token = prefs.getString("token", null);
     }
 
-    private class GetContacts extends AsyncTask<Void, Void, Void> {
+    private void setUpRecyclerView() {
+        recyclerView = findViewById(R.id.on_transferred_list);
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        transferredAdapter = new TransferredAdapter(new TransferredAdapter.OnTransferredClickListener() {
+            @Override
+            public void onTransferredClick(Transferred transferred) {
+                TransferredDetailActivity.launch(OnTransferredActivity.this, transferred);
+            }
+        });
+        recyclerView.setAdapter(transferredAdapter);
+    }
 
-        @Override
-        protected void onPreExecute() {
-            Toast.makeText(OnTransferredActivity.this, "Json data is downloading",
-                    Toast.LENGTH_LONG).show();
-        }
-
-        @Override
-        protected Void doInBackground(Void... arg0) {
-            HttpHandler sh = new HttpHandler();
-            //Выполнение запроса на URL-адрес и получение ответа(response)
-            String url = "http://109.234.153.44/fss/qwerynzpartstat.asp?token=717085139&dtstart=01.01.2018&dtend=19.01.2018";
-            String jsonStr = sh.makeServiceCall(url);
-
-            Log.e(TAG, "Response from url: " + jsonStr);
-            if (jsonStr != null){
-                try {
-                    JSONObject jsonObj = new JSONObject(jsonStr);
-
-                    //Поучаем JSON Array
-                    JSONArray contacts = jsonObj.getJSONArray("CROSS");
-
-                    //Проход по всем полям
-                    for (int i = 0; i < contacts.length(); i++){
-                        JSONObject c = contacts.getJSONObject(i);
-
-                        String peredan = c.getString("Peredannie zaiavki za otchetnii period");
-                        String obrabot = c.getString("Obrabotannie zayavki");
-                        String ne_obrabot = c.getString("Ne obrabotannie zayavki");
-                        String peredymal = c.getString("Peredymal");
-                        String sdelal_sam = c.getString("Sdelal sam");
-                        String obrat_k_dryg = c.getString("Obratilsa k drygim");
-                        String nekor_dann = c.getString("Nekorrektnie dannie");
-                        String nedozvon = c.getString("Nedozvon");
-                        String dubl = c.getString("Dubl");
-                        String ne_region = c.getString("Ne viezjaem v region");
-                        String ne_rabot = c.getString("Ne vipolnyaem takie raboti");
-                        String adres_sc = c.getString("Dali adres SC");
-                        String sam_perezvon = c.getString("Sam perezvonit");
-                        String hotel_konsul = c.getString("Hotel konsyltacyu po telefony");
-                        String v_rabot = c.getString("V rabote");
-
-                        HashMap<String, String> contact = new HashMap<>();
-
-                        //adding each child node to HashMap key => value
-                        contact.put("Peredannie zaiavki za otchetnii period", peredan);
-                        contact.put("Obrabotannie zayavki", obrabot);
-                        contact.put("Ne obrabotannie zayavki", ne_obrabot);
-                        contact.put("Peredymal", peredymal);
-                        contact.put("Sdelal sam", sdelal_sam);
-                        contact.put("Obratilsa k drygim", obrat_k_dryg);
-                        contact.put("Nekorrektnie dannie", nekor_dann);
-                        contact.put("Nedozvon", nedozvon);
-                        contact.put("Dubl", dubl);
-                        contact.put("Ne viezjaem v region", ne_region);
-                        contact.put("Ne vipolnyaem takie raboti", ne_rabot);
-                        contact.put("Dali adres SC", adres_sc);
-                        contact.put("Sam perezvonit", sam_perezvon);
-                        contact.put("Hotel konsyltacyu po telefony", hotel_konsul);
-                        contact.put("V rabote", v_rabot);
-
-                        //adding contact to contact list
-                        contactList.add(contact);
-                    }
-                }catch (final JSONException e){
-                    Log.e(TAG, "Json parsing error: " + e.getMessage());
-                    runOnUiThread(new Runnable() {
-                        @Override
-                        public void run() {
-                            Toast.makeText(getApplicationContext(),
-                                    "Json parsing error: " + e.getMessage(),
-                                    Toast.LENGTH_LONG).show();
-                        }
-                    });
-                }
-            }else {
-                Log.e(TAG, "Couldn't get json from server.");
-                runOnUiThread(new Runnable() {
+    private void setUpDateFilter() {
+        dateStartView = findViewById(R.id.date_begin);
+        dateEndView = findViewById(R.id.date_end);
+        dateStartView.setText(dateFormat.format(dateStart.getTime()));
+        dateEndView.setText(dateFormat.format(dateEnd.getTime()));
+        dateStartView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showDatePickerDialog(dateStart, new DatePickerDialog.OnDateSetListener() {
                     @Override
-                    public void run() {
-                        Toast.makeText(getApplicationContext(),
-                                "Couldn't get json from server. Check LogCat for possible errors!",
-                                Toast.LENGTH_SHORT).show();
+                    public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+                        dateStart.set(year, month, dayOfMonth);
+                        dateStartView.setText(dateFormat.format(dateStart.getTime()));
                     }
                 });
             }
-            return null;
+        });
+        dateEndView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showDatePickerDialog(dateEnd, new DatePickerDialog.OnDateSetListener() {
+                    @Override
+                    public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+                        dateEnd.set(year, month, dayOfMonth);
+                        dateEndView.setText(dateFormat.format(dateEnd.getTime()));
+                    }
+                });
+            }
+        });
+        findViewById(R.id.btn_check_orders).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                loadTransferred(dateStart, dateEnd);
+            }
+        });
+    }
+
+    private void showDatePickerDialog(Calendar dateStart,
+                                      DatePickerDialog.OnDateSetListener listener) {
+        new DatePickerDialog(
+                this,
+                listener,
+                dateStart.get(Calendar.YEAR),
+                dateStart.get(Calendar.MONTH),
+                dateStart.get(Calendar.DAY_OF_MONTH)
+        ).show();
+    }
+
+    private void loadTransferred(Calendar dateStart, Calendar dateEnd) {
+
+        if (dateStart.getTimeInMillis() > dateEnd.getTimeInMillis()) {
+            showIncorrectDataError();
+            return;
         }
 
-        @Override
-        protected void onPostExecute(Void result) {
-            super.onPostExecute(result);
-            ListAdapter adapter = new SimpleAdapter(OnTransferredActivity.this, contactList,
-                    R.layout.item_on_transferred_list, new String[]{"Peredannie zaiavki za otchetnii period", "Obrabotannie zayavki",
-                    "Ne obrabotannie zayavki", "Peredymal", "Sdelal sam", "Obratilsa k drygim", "Nekorrektnie dannie", "Nedozvon",
-                    "Dubl", "Ne viezjaem v region", "Ne vipolnyaem takie raboti", "Dali adres SC", "Sam perezvonit",
-                    "Hotel konsyltacyu po telefony", "V rabote"},
-                    new int[]{R.id.trans_pered, R.id.trans_obrabot, R.id.trans_ne_obrabot,
-                            R.id.trans_peredymal, R.id.trans_sdelal_sam, R.id.trans_obrat_k_drygim, R.id.trans_nekorrekt_dannie,
-                            R.id.trans_nedozvon, R.id.trans_dubl, R.id.trans_ne_region,
-                            R.id.trans_ne_raboti, R.id.trans_adres_sc, R.id.trans_sam_perezvon,
-                            R.id.trans_konsultacyu, R.id.trans_v_rabote});
-            lv.setAdapter(adapter);
-        }
+        final ProgressBar progressBar = (ProgressBar) findViewById(R.id.progressBar);
+        progressBar.setVisibility(View.VISIBLE);
+
+        final RecyclerView recyclerView = (RecyclerView) findViewById(R.id.on_transferred_list);
+
+        recyclerView.setVisibility(View.INVISIBLE);
+        FssService fssService = ((FssApp) getApplication()).getFssService();
+        fssService.transferreds(token, dateFormat.format(dateStart.getTime()), dateFormat.format(dateEnd.getTime())).enqueue(new Callback<TransferredResponse>() {
+            @Override
+            public void onResponse(Call<TransferredResponse> call, Response<TransferredResponse> response) {
+                progressBar.setVisibility(View.INVISIBLE);
+                recyclerView.setVisibility(View.VISIBLE);
+                List<Transferred> transferreds = response.body().getTransferreds();
+                showTransferred(transferreds);
+            }
+
+            @Override
+            public void onFailure(Call<TransferredResponse> call, Throwable t) {
+                progressBar.setVisibility(View.INVISIBLE);
+                Log.w(TAG, "Failed to load orders", t);
+                Toast.makeText(OnTransferredActivity.this,
+                        "Ошибка в загрузке", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+    private void showIncorrectDataError() {
+        new AlertDialog.Builder(this)
+                .setMessage("Введена некорректная дата")
+                .setNeutralButton("Понятно", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {}
+                })
+                .create()
+                .show();
+    }
+
+    private void showTransferred(List<Transferred> transferreds) {
+        transferredAdapter.setTransferreds(transferreds);
+    }
+
+    private void setUpToolbar() {
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
     }
 }

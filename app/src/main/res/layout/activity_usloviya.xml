@@ -2,13 +2,13 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/main_background">
+    android:background="@color/colorPrimaryDark">
 
     <RelativeLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/main_background"
+        android:background="@color/colorPrimaryDark"
         android:orientation="vertical"
         android:scrollbarAlwaysDrawVerticalTrack="true">
 
@@ -36,7 +36,7 @@
             android:padding="20dp">
 
             <LinearLayout
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
@@ -47,21 +47,21 @@
 Съешь ещё этих мягких французских булок, да выпей же чаю. Съешь ещё этих мягких французских булок, да выпей же чаю
 Съешь ещё этих мягких французских булок, да выпей же чаю. Съешь ещё этих мягких французских булок, да выпей же чаю. Съешь ещё этих мягких французских булок, да выпей же чаю
 Съешь ещё этих мягких французских булок, да выпей же чаю .Съешь ещё этих мягких французских булок, да выпей же чаю"
-                    android:textStyle="normal"/>
+                    android:textStyle="normal" />
 
                 <Button
                     android:id="@+id/btn_conform_usloviya"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginRight="22dp"
                     android:layout_marginBottom="10dp"
                     android:layout_marginLeft="22dp"
-                    android:theme="@style/Button"
+                    android:layout_marginRight="22dp"
+                    android:layout_marginTop="20dp"
                     android:text="Принять"
                     android:textAllCaps="false"
                     android:textColor="#fff"
-                    android:textSize="18sp"/>
+                    android:textSize="18sp"
+                    android:theme="@style/Button" />
 
             </LinearLayout>
 

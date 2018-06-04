@@ -11,5 +11,6 @@ import retrofit2.http.Path;
 public interface VarifyToken {
 
     @GET("varify.asp")
-    public Call<VerifyResponse> varify(@Path("token") String token);
+    public Call<VerifyResponse> varify(
+            @Path("token") String token);
 }

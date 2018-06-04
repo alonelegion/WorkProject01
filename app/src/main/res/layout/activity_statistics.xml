@@ -1,5 +1,6 @@
-<FrameLayout
+<android.support.constraint.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
@@ -10,7 +11,16 @@
         android:id="@+id/imageTest"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:src="@drawable/login_345"/>
+        android:src="@color/colorPrimaryDark"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:title="Статистика"
+        style="@style/Toolbar"
+        app:navigationIcon="@drawable/ic_arrow_back_white_24dp"/>
 
     <LinearLayout
         android:id="@+id/anim_main_container"
@@ -18,22 +28,9 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:orientation="vertical"
-        android:paddingTop="150dp"
-        tools:ignore="HardcodedText">
-
-        <TextView
-            android:id="@+id/login_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="20dp"
-            android:alpha="0"
-            android:gravity="center"
-            android:text="СТАТИСТИКА"
-            android:textStyle="bold"
-            android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle.Inverse"
-            android:textSize="22sp"
-            tools:alpha="1"/>
+        android:layout_marginTop="24dp"
+        tools:ignore="HardcodedText"
+        app:layout_constraintTop_toBottomOf="@+id/img_logo">
 
         <Button
             android:id="@+id/btn_for_finance"
@@ -74,8 +71,10 @@
         android:id="@+id/img_logo"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_gravity="center"
-        android:layout_marginBottom="100dp"
-        android:background="@drawable/fss_b_logo_red"/>
+        android:layout_margin="24dp"
+        android:background="@drawable/fss_b_logo_red"
+        app:layout_constraintEnd_toEndOf="@+id/imageTest"
+        app:layout_constraintStart_toStartOf="@+id/imageTest"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
-</FrameLayout>
+</android.support.constraint.ConstraintLayout>

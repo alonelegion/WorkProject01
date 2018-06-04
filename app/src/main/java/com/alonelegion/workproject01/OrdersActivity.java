@@ -105,7 +105,7 @@ public class OrdersActivity extends AppCompatActivity {
         mWorkOrders.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(OrdersActivity.this, ExpendableTest.class);
+                Intent intent = new Intent(OrdersActivity.this, WorkOrdersActivity.class);
                 startActivity(intent);
             }
         });
